@@ -1,0 +1,17 @@
+# Default: leave text detection automatic
+* text=auto
+
+
+# Microsoft Office files must be treated as binary and never normalized
+*.vsdx binary -text
+*.vsd  binary -text
+*.docx binary -text
+*.doc binary -text
+*.xlsx binary -text
+*.xls binary -text
+*.pptx binary -text
+*.ppt binary -text
+
+# LabCenter Proteus files must be treated as binary and never normalized
+*.pdsprj binary -text
+*.workspace binary -text
