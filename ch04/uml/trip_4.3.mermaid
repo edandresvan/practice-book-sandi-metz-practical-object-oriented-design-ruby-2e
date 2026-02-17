@@ -1,0 +1,8 @@
+sequenceDiagram
+  actor Customer
+  participant Trip
+
+  Customer->>Trip: suitable_trips
+  activate Trip
+  Trip-->>Customer:
+  deactivate Trip

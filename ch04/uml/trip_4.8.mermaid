@@ -1,0 +1,26 @@
+sequenceDiagram
+  actor Customer
+  participant TripFinder
+  participant Trip
+  participant Bicycle
+
+  Customer->>TripFinder: suitable_trips
+  activate TripFinder
+
+  TripFinder->>Trip: suitable_trips
+  activate Trip
+  Trip-->>TripFinder: 
+  deactivate Trip
+
+  Note over TripFinder: for each trip found
+
+  TripFinder->>Bicycle: suitable_bicycle
+  activate Bicycle
+  Bicycle-->>TripFinder:
+  deactivate Bicycle
+
+  TripFinder-->>Customer: 
+  deactivate TripFinder
+
+
+  

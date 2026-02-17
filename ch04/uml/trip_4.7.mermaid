@@ -1,0 +1,13 @@
+sequenceDiagram
+  participant Trip
+  participant Mechanic
+
+  Trip->>+Mechanic: prepare_trip(self)
+  Mechanic->>-Trip: bicycles
+  Trip-->>Mechanic:
+  activate Mechanic 
+  Note over Mechanic: for each bicycle
+  Mechanic->>Mechanic: prepare_bicycle(bike)
+  deactivate Mechanic
+  Mechanic-->>Trip: 
+

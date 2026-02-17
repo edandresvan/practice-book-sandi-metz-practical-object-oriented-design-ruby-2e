@@ -1,0 +1,18 @@
+sequenceDiagram
+  actor Customer
+  participant Trip
+  participant Bicycle
+
+  Customer->>Trip: suitable_trips
+  activate Trip
+  Trip-->>Customer:
+  deactivate Trip
+
+  Customer->>Bicycle: suitable_bicycle
+  activate Bicycle
+  Bicycle-->>Customer:
+  deactivate Bicycle
+
+
+  Note over Customer: for each trip found
+

@@ -1,0 +1,24 @@
+sequenceDiagram
+  participant Trip
+  participant Mechanic
+
+  Trip->>Trip: bicycles
+  Note over Trip: for each bicycle
+
+  Trip->>Mechanic: clean_bicycle
+  activate Mechanic
+  Mechanic-->>Trip:
+  deactivate Mechanic
+  Trip->>Mechanic: pump_tires
+  activate Mechanic
+  Mechanic-->>Trip:
+  deactivate Mechanic
+  Trip->>Mechanic: lube_chain
+  activate Mechanic
+  Mechanic-->>Trip:
+  deactivate Mechanic
+  Trip->>Mechanic: check_brakes
+  activate Mechanic
+  Mechanic-->>Trip:
+  deactivate Mechanic
+
