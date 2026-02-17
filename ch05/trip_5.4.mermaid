@@ -1,0 +1,22 @@
+sequenceDiagram
+  
+  participant Object
+  participant Trip
+  participant Preparer
+
+  Object->>Trip: prepare(preparers)
+  activate Object
+  activate Trip
+
+  loop preparers
+    Trip->>Preparer: prepare_trip(self)
+    activate Preparer
+    Preparer-->>Trip: request_additional_info
+    Trip->>Preparer: additional_info_response
+    Preparer-->>Trip: 
+    deactivate Preparer
+  end
+
+  Trip-->>Object: 
+  deactivate Trip
+  deactivate Object

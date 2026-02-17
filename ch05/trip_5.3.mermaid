@@ -1,0 +1,40 @@
+sequenceDiagram
+  participant Object
+  participant Trip
+  participant MissingPreparer
+  participant Mechanic
+  participant TripCoordinator
+  participant Driver
+
+  box lemonchiffon 
+    participant MissingPreparer
+  end
+
+  Object->>Trip: prepare(preparers)
+  activate Object
+  activate Trip
+  loop preparers
+
+    alt Mechanic
+      Trip->>+Mechanic: prepare_bicycles(bicycles)
+      Mechanic-->>-Trip: 
+    
+    else TripCoordinator
+    
+      Trip->>+TripCoordinator: buy_food(customers)
+      TripCoordinator-->>-Trip:
+    
+    else Driver
+
+      Trip->>+Driver: gas_up(vehicle)
+      Driver-->-Trip: 
+
+      Trip->>+Driver: fill_water_tank(vehicle)
+      Driver-->-Trip:
+    end
+
+    Trip-->Object:
+    deactivate Trip
+  end
+
+  deactivate Object

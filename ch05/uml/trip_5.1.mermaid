@@ -1,0 +1,19 @@
+sequenceDiagram
+  participant Object
+  participant Trip
+  participant Mechanic
+
+  Object->>Trip: prepare(mechanic)
+  activate Object
+  activate Trip
+
+  Trip->>Mechanic: prepare_bicycles(bicycles)
+  activate Mechanic
+  Mechanic-->>Trip: 
+  deactivate Mechanic 
+
+  Trip-->>Object: 
+  deactivate Trip
+
+  deactivate Object
+  
